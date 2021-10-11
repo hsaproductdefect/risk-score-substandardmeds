@@ -3,15 +3,13 @@
 #Load package libraries
 library(shiny)
 
-theme_custom <- theme_set(theme_bw(20))
-
 
 
 f <- c(2) 
 data1 <- as.data.frame(f)
 #----------------------------------------------------------------------------------------	
 #Define user-input 
-shinyServer(function(input, output) {
+shinyServer(function(input, output, session) {
   
 
   all.data <- reactive({
@@ -75,7 +73,7 @@ shinyServer(function(input, output) {
     
     #meddra 
     if (meddrac == 3 | meddrac == 4 | meddrac == 6| meddrac == 7|
-        meddrac == 8| meddrac == 10| meddrac == 13| meddrac == 25| meddrac == 29) {
+        meddrac == 8| meddrac == 10| meddrac == 25| meddrac == 29) {
       coeff_meddra = 2.69
       output$meddraDisplay <- renderText(paste("- Nature of defect: severe"))
     }
@@ -220,6 +218,8 @@ shinyServer(function(input, output) {
   
       output$meddraDisplay2 <- renderText(paste("- Nature of defect: not severe"))
     }
+    
+
     
   #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
    

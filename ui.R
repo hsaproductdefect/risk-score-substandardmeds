@@ -1,20 +1,35 @@
 
+
 fluidPage(
   
   #Application Title and Logo
   fixedRow(
     column(8,
            titlePanel("Prioritizing the management of quality issues related to
-                      substandard medicines"), 
-    
-           h5("Developed by: Ang PS, Teo CHD, Toh YL, Ng SYM, Choong CT, Phuah STD, Tan HMD, Tan MF, Tan SHM, Koh ST, Thinn WM, Poh WWJ & Dorajoo SR"),
-           h6("Vigilance and Compliance Branch, Health Sciences Authority, Singapore"),
+                      substandard medicines"), offset =2,  align = "center")),
            
-           offset = 2, align = "center")
-    
-          
-  ),	#Brackets closing "fixedRow"
-  
+           fixedRow(
+             column(6,
+                    h3("Project Description"), 
+                    
+                    p("A regulatory risk impact prioritisation model for substandard medicines 
+                      (i.e. health products that fail to meet quality specifications) was developed to sieve out cases which potentially carry higher public health impact. 
+                      A statistical approach was further applied and validated to the risk classification model which identified
+                      4 key product- and defect-related factors that predict the likelihood of an issue turning into one that 
+                      carries high public health risks."),
+                    
+                    h5("The 4 factors are:"),
+                    h5("1.	Defect classification based on nature of issue (MedDRA code);"),
+                    h5( "2.	Therapeutic indication of the product involved"),
+                    h5( "3.	Visual detectability of the defect or issue" ),
+                    h5( "4.	Whether any overseas regulatory action has been meted out at the time of evaluation"),
+                    br(),
+                    h5("Entering information on these 4 factors will generate a predicted probability of the case having high public health impact."),
+                    
+                    
+                    h5("This 4-factor model is accessible as an interactive web application in the 'Tool' tab above."))),
+           
+
   hr(),	
   
   #Sidebar
@@ -77,7 +92,9 @@ selectInput(inputId = "meddra",width = 500,
     
     mainPanel(
       br(),
-      h4(("Critical case details:"), align = "left"),
+
+
+   h4(("Critical case details:"), align = "left"),
 
     
 div(textOutput("TXIDDisplay"), style = "color:black", align = "left"),
@@ -89,9 +106,28 @@ br(),
 textOutput("statement"),
 textOutput("class")
 
+
+
       
     )	#Brackets closing "mainPanel"
     
-  )	#Brackets closing "sidebarLayout"
+  ),	#Brackets closing "sidebarLayout"
+br(),
+fixedRow(
+  column(8,
+      
+         "Code files for the application are available at: ",
+        tags$a(href="https://github.com/hsaproductdefect/risk-score-substandardmeds", 
+   "HSA Product Defect GitHub repository"),
+      br(),
+  br(),
+h5(strong("Project Owner:"),"Vigilance and Compliance Branch, Health Sciences Authority, Singapore"),
+ h5(strong("Developed by:"), "Ang PS, Teo CHD, Toh YL, Ng SYM, Choong CT, Phuah STD, Tan HMD, Tan MF, Tan SHM, Koh ST, Thinn WM, Poh WWJ & Dorajoo SR")))
+
   
 )	#Brackets closing "fixedPage"
+
+
+
+ # Brackets closing tabPanel - NavBar
+ # Brackets closing Navbarpage 
