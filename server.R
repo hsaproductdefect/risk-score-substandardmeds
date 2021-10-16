@@ -82,7 +82,7 @@ shinyServer(function(input, output, session) {
       output$meddraDisplay <- renderText(paste("- Nature of defect: not severe"))
     }
     
-    #meddra 222222222
+    #meddra severe
     if (meddrac == 8) {
       
       output$meddraDisplay2 <- renderText(paste("- Nature of defect: Product inner label issue impacting strength, dose and/or safety "))
@@ -107,10 +107,6 @@ shinyServer(function(input, output, session) {
       
       output$meddraDisplay2 <- renderText(paste("- Nature of defect: Product outer label issue impacting strength, dose and/or safety  "))
     }
-    else if (meddrac == 13) {
-      
-      output$meddraDisplay2 <- renderText(paste("- Nature of defect: Product leaflet issue impacting strength, dose and/or safety  "))
-    }
     else if (meddrac == 25) {
       
       output$meddraDisplay2 <- renderText(paste("- Nature of defect: Product counterfeit  "))
@@ -120,7 +116,7 @@ shinyServer(function(input, output, session) {
       output$meddraDisplay2 <- renderText(paste("- Nature of defect: Product formulation issue  "))
     }
     
-    ##non - severe 
+    ##meddra non-severe 
     else if (meddrac == 2) {
       
       output$meddraDisplay2 <- renderText(paste("- Nature of defect: Contamination with chemical substance   "))
@@ -144,6 +140,10 @@ shinyServer(function(input, output, session) {
     else if (meddrac == 12) {
       
       output$meddraDisplay2 <- renderText(paste("- Nature of defect: Product leaflet missing"))
+    }
+    else if (meddrac == 13) {
+      
+      output$meddraDisplay2 <- renderText(paste("- Nature of defect: Product leaflet issue impacting strength, dose and/or safety  "))
     }
     else if (meddrac == 14) {
       
