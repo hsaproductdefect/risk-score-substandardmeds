@@ -11,3 +11,5 @@ A regulatory risk impact prioritisation model for substandard medicines (i.e. he
 4. Whether any overseas regulatory actions (in relation to Singapore) had been meted out at the time of evaluation
 
 This four-factor model is presented in the form of a R Shiny app which can be found at: https://hsa-vcb.shinyapps.io/product_defect_predict_impact/. Code files for the Shiny app are also appended in this repository.
+
+Full publication for this project can be found at https://onlinelibrary.wiley.com/doi/10.1002/pds.5434.
